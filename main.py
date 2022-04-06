@@ -8,7 +8,6 @@ def bar_progress(current, total, width=80):
     sys.stdout.flush()
 
 
-# Now use this like below,
 url = 'https://download.jetbrains.com/python/pycharm-community-2021.3.3.exe'
 save_path = "D:\python wget"
 wget.download(url, save_path, bar=bar_progress)
