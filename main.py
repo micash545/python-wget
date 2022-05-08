@@ -1,3 +1,4 @@
+import urllib
 import wget
 import sys
 
@@ -6,7 +7,17 @@ def bar_progress(current, total, width=80):
     sys.stdout.write("\r" + progress_message)
     sys.stdout.flush()
 
+kupa = urllib.error.HTTPError
 
-url = 'https://download.jetbrains.com/python/pycharm-community-2021.3.3.exe'
-save_path = "D:\python wget"
-wget.download(url, save_path, bar=bar_progress)
+url = input('paste url')
+save_path = "D:\python-wget"
+
+try:
+    wget.download(url, save_path, bar=bar_progress)
+
+except Exception as e:
+    print(e)
+
+
+
+
